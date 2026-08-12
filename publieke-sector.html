@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Publieke sector — Integraal Groen</title>
+<meta name="description" content="Flexibele beheercapaciteit voor steden en gemeenten: openbaar groen, pleinen en parken.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <nav class="wrap">
+    <a href="index.html"><img class="logo-mark" src="assets/logo.png" alt="Integraal Groen — Outdoor Facility Management"></a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Menu openen">
+      <span class="bar"></span>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html#diensten">Diensten</a>
+      <div class="dropdown" id="voorWieDropdown">
+        <a href="javascript:void(0)" id="voorWieToggle" aria-current="page">Voor wie ▾</a>
+        <div class="dropdown-menu">
+          <a href="zorg.html">Zorg</a>
+          <a href="bedrijven.html">Bedrijven &amp; sites</a>
+          <a href="vastgoed.html">Residentieel vastgoed &amp; syndici</a>
+          <a href="scholen.html">Scholen</a>
+          <a href="publieke-sector.html">Publieke sector</a>
+        </div>
+      </div>
+      <a href="index.html#contact">Over ons</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="groendirect.html" class="btn-nav">Groen Direct</a>
+    </div>
+  </nav>
+</header>
+<main>
+
+  <section class="hero">
+    <div class="wrap">
+      <span class="eyebrow reveal">Voor wie — Publieke sector</span>
+      <h1 class="reveal">Flexibele beheercapaciteit voor steden en gemeenten</h1>
+      <p class="reveal">Aanvullende of volledige uitvoeringscapaciteit voor openbaar groen, pleinen en parken — planbaar en op aanvraag.</p>
+      <div class="btn-row reveal">
+        <a href="index.html#contact" class="btn btn-primary">Neem contact op voor een samenwerking</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="photo-banner reveal"><span class="tag">Foto: openbare ruimte, ontharding, boomspiegels, plein</span></div>
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="wrap two-col reveal">
+      <div class="content-block">
+        <p>Gemeenten en openbare besturen combineren vaak eigen groendiensten met externe uitvoeringscapaciteit, zeker bij pieken of gespecialiseerde taken. Wij bieden die flexibele capaciteit, van periodiek beheer tot snelle interventies op meldingen van inwoners.</p>
+      </div>
+      <div>
+        <h3 style="font-size:19px; margin-bottom:18px;">Wat wij oplossen</h3>
+        <ul class="checklist">
+        <li>Aanvullende uitvoeringscapaciteit naast de eigen groendienst</li>
+        <li>Snelle interventie op meldingen (overhangende tak, zwerfvuil, wildgroei)</li>
+        <li>Beheer van bloemrijke en biodiverse zones met bijhorende communicatie naar inwoners</li>
+        <li>Digitale rapportage, bruikbaar voor interne opvolging</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing" style="border-top:1px solid var(--line);">
+    <div class="wrap">
+      <h2 class="reveal">Klaar voor een vrijblijvend gesprek?</h2>
+      <a href="index.html#contact" class="btn btn-primary reveal">Neem contact op voor een samenwerking</a>
+    </div>
+  </section>
+
+</main>
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img class="footer-logo" src="assets/logo.png" alt="Integraal Groen">
+        <p>Outdoor Facility Management voor zorg, bedrijven, vastgoed, scholen en de publieke sector.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h5>Diensten</h5>
+          <a href="index.html#diensten">Groenbeheer</a>
+          <a href="index.html#diensten">Terreinbeheer</a>
+          <a href="index.html#diensten">Netheid</a>
+          <a href="groendirect.html">Interventies</a>
+        </div>
+        <div class="footer-col">
+          <h5>Voor wie</h5>
+          <a href="zorg.html">Zorg</a>
+          <a href="bedrijven.html">Bedrijven &amp; sites</a>
+          <a href="vastgoed.html">Vastgoed &amp; syndici</a>
+          <a href="scholen.html">Scholen</a>
+          <a href="publieke-sector.html">Publieke sector</a>
+        </div>
+        <div class="footer-col">
+          <h5>Bedrijf</h5>
+          <a href="index.html#contact">Over ons</a>
+          <a href="index.html#contact">Contact</a>
+          <a href="groendirect.html">Groen Direct</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© Integraal Groen — Outdoor Facility Management</span>
+      <span>Gent, België</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  if('IntersectionObserver' in window){
+    const obs = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); }
+      });
+    }, {threshold:0.12});
+    document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in'));
+  }
+
+  // Mobile nav toggle
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  if(navToggle){
+    navToggle.addEventListener('click', ()=>{
+      const open = navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+  // Mobile "Voor wie" submenu toggle (tap to expand instead of hover on touch)
+  const vwToggle = document.getElementById('voorWieToggle');
+  const vwDropdown = document.getElementById('voorWieDropdown');
+  if(vwToggle){
+    vwToggle.addEventListener('click', (e)=>{
+      if(window.innerWidth <= 980){
+        e.preventDefault();
+        vwDropdown.classList.toggle('open');
+      }
+    });
+  }
+  // Close mobile menu when a real link is clicked
+  document.querySelectorAll('.nav-links a:not(#voorWieToggle)').forEach(a=>{
+    a.addEventListener('click', ()=>{
+      navLinks.classList.remove('open');
+      if(navToggle) navToggle.setAttribute('aria-expanded','false');
+    });
+  });
+</script>
+</body>
+</html>
