@@ -50,12 +50,26 @@
   </section>
 
   <section style="padding-bottom:0;">
+    <div class="wrap">
+      <div class="ba-slider reveal" id="ba-weg">
+      <img class="ba-after" src="assets/IG_na_weg.png" alt="Na: weg opgeruimd door Groen DIRECT">
+      <img class="ba-before" src="assets/IG_voor_weg.png" alt="Voor: omgevallen tak op de weg">
+      <div class="ba-divider"></div>
+      <span class="ba-label ba-label-before">Voor</span>
+      <span class="ba-label ba-label-after">Na</span>
+      <div class="ba-grip"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M7 4L2 10L7 16" stroke="#153A2C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M13 4L18 10L13 16" stroke="#153A2C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <input type="range" class="ba-range" min="0" max="100" value="50" aria-label="Vergelijk voor- en na-situatie">
+    </div>
+    </div>
+  </section>
+
+  <section>
     <div class="wrap content-block reveal">
       <p>Omgevallen tak na storm. Een tuin die volledig dichtgegroeid is. Een berg snoeihout. Een vuile parking of verstopte afvoer. Groen DIRECT is de interventiedienst van Integraal Groen: voor alles wat buiten nú moet gebeuren, niet volgend jaarcontract.</p>
     </div>
   </section>
 
-  <section>
+  <section style="padding-bottom:0;">
     <div class="wrap">
       <div class="section-head reveal">
         <span class="eyebrow">Hoe het werkt</span>
@@ -72,7 +86,15 @@
 
   <section style="background:var(--grey-warm); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
     <div class="wrap">
-      <div class="photo-banner reveal"><span class="tag">Foto: voor/na, interventiewagen, machine in actie</span></div>
+      <div class="ba-slider reveal" id="ba-huis">
+      <img class="ba-after" src="assets/IG_na_huis.png" alt="Na: tuin opgeruimd door Groen DIRECT">
+      <img class="ba-before" src="assets/IG_voor_huis.png" alt="Voor: verwaarloosde tuin bij woning">
+      <div class="ba-divider"></div>
+      <span class="ba-label ba-label-before">Voor</span>
+      <span class="ba-label ba-label-after">Na</span>
+      <div class="ba-grip"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M7 4L2 10L7 16" stroke="#153A2C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M13 4L18 10L13 16" stroke="#153A2C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <input type="range" class="ba-range" min="0" max="100" value="50" aria-label="Vergelijk voor- en na-situatie">
+    </div>
     </div>
   </section>
 
@@ -142,6 +164,15 @@
   } else {
     document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in'));
   }
+
+  // Before/after vergelijkingssliders
+  document.querySelectorAll('.ba-slider').forEach(slider=>{
+    const range = slider.querySelector('.ba-range');
+    if(!range) return;
+    const update = ()=> slider.style.setProperty('--pos', range.value + '%');
+    update();
+    range.addEventListener('input', update);
+  });
 
   // Mobile nav toggle
   const navToggle = document.getElementById('navToggle');

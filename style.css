@@ -207,6 +207,42 @@ nav.wrap{
 .bar-col span{ font-size:11.5px; color:var(--ink-soft); }
 .method-chart-note{ display:block; font-size:13px; color:var(--ink-soft); margin-top:18px; line-height:1.5; }
 
+/* ---------- VOOR/NA VERGELIJKINGSSLIDER ---------- */
+.ba-slider{
+  position:relative; aspect-ratio:3/2; border-radius:14px; overflow:hidden;
+  margin-bottom:8px; --pos:50%; background:var(--grey-warm);
+}
+.ba-slider img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; pointer-events:none; }
+.ba-after{ z-index:1; }
+.ba-before{ z-index:2; clip-path:inset(0 calc(100% - var(--pos)) 0 0); }
+.ba-divider{
+  position:absolute; top:0; bottom:0; left:var(--pos); width:2px; background:#fff;
+  transform:translateX(-1px); box-shadow:0 0 0 1px rgba(0,0,0,.15); z-index:3; pointer-events:none;
+}
+.ba-label{
+  position:absolute; top:16px; z-index:3;
+  font-family:'IBM Plex Mono', monospace; font-size:11.5px; letter-spacing:.06em; text-transform:uppercase;
+  background:rgba(21,58,44,0.72); color:#fff; padding:6px 12px; border-radius:5px;
+  pointer-events:none;
+}
+.ba-label-before{ left:16px; }
+.ba-label-after{ right:16px; }
+.ba-grip{
+  position:absolute; top:50%; left:var(--pos); transform:translate(-50%,-50%);
+  width:44px; height:44px; border-radius:50%; background:#fff;
+  box-shadow:0 4px 14px rgba(0,0,0,.28);
+  display:flex; align-items:center; justify-content:center;
+  z-index:3; pointer-events:none;
+}
+.ba-range{
+  position:absolute; inset:0; width:100%; height:100%; margin:0;
+  opacity:0; cursor:ew-resize; z-index:4;
+  -webkit-appearance:none; appearance:none; touch-action:pan-y;
+}
+.ba-range::-webkit-slider-thumb{ -webkit-appearance:none; width:44px; height:100%; }
+.ba-range::-moz-range-thumb{ width:44px; height:100%; background:transparent; border:none; }
+.ba-range::-moz-range-track{ background:transparent; }
+
 /* ---------- SERVICES GRID ---------- */
 .services-grid{ display:grid; grid-template-columns:repeat(3, 1fr); border-top:1px solid var(--line); border-left:1px solid var(--line); }
 .service-card{ padding:38px 34px; border-right:1px solid var(--line); border-bottom:1px solid var(--line); transition:background .2s ease; }
