@@ -42,7 +42,7 @@
     <div class="wrap">
       <span class="eyebrow reveal">Voor wie — Zorg</span>
       <h1 class="reveal">Een buitenomgeving die meewerkt aan zorg</h1>
-      <p class="reveal">Wij zorgen dat de buitenruimte van uw instelling veilig, verzorgd en bruikbaar blijft — voor bewoners, patiënten, bezoekers en medewerkers.</p>
+      <p class="reveal">Een groene, natuurlijke en veilige omgeving waar mens en natuur in balans samenkomen. Een buitenruimte die bijdraagt aan kwalitatieve zorg door rust te bieden, beweging te stimuleren en ontmoeting en verbinding te bevorderen. Tegelijk krijgt ook de lokale biodiversiteit er ruimte en wordt de groene omgeving rondom de zorgsite versterkt.</p>
       <div class="btn-row reveal">
         <a href="contact.html" class="btn btn-primary">Vraag een vrijblijvend terreinbezoek aan</a>
       </div>
@@ -81,12 +81,14 @@
     <div class="wrap content-block reveal">
       <span class="eyebrow">Waarom dit voor u werkt</span>
       <p>Onderzoek toont aan dat een groot deel van de Vlaamse zorginstellingen nood heeft aan een groenere, meer biodiverse buitenomgeving — maar tegelijk het onderhoud daarvan beheersbaar en voorspelbaar wil houden. Onze aanpak combineert beide: een omgeving die goed doet voor bewoners en personeel, beheerd binnen een duidelijk, vast jaarcontract.</p>
-      <p style="font-size:15px; color:var(--ink-soft);">Onze aanpak is mee ontwikkeld in samenwerking met HOGENT en VIVES, en gebaseerd op onderzoek naar de impact van groen op welzijn in zorgcontexten.</p>
+      <p style="font-size:15px; color:var(--ink-soft);">Onze aanpak is mee ontwikkeld op basis van de opleiding Groenmanagement aan VIVES, en gebaseerd op onderzoek naar de impact van groen op welzijn in zorgcontexten.</p>
 
+      <!--
       <blockquote>
         "De omgeving hoeft niet groot te zijn. Een rustige hoek met een bankje, wat schaduw en groen — dat maakt al een verschil voor wie hier verblijft."
         <cite>— [naam, functie — aan te vullen na eerste referentieproject]</cite>
       </blockquote>
+      -->
     </div>
   </section>
 
@@ -155,6 +157,15 @@
   } else {
     document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in'));
   }
+
+  // Before/after vergelijkingssliders
+  document.querySelectorAll('.ba-slider').forEach(slider=>{
+    const range = slider.querySelector('.ba-range');
+    if(!range) return;
+    const update = ()=> slider.style.setProperty('--pos', range.value + '%');
+    update();
+    range.addEventListener('input', update);
+  });
 
   // Mobile nav toggle
   const navToggle = document.getElementById('navToggle');
